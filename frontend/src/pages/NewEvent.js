@@ -1,3 +1,4 @@
+import { redirect } from 'react-router-dom';
 import EventForm from '../components/EventForm';
 export default function NewEventPage() {
     return <EventForm event={{}} />;
@@ -22,8 +23,7 @@ export async function action({ request }) {
     if (!response.ok) {
         throw new Response(JSON.stringify({ message: 'Could not create a new event' }), { status: 500 });
     } else {
-        const resData = await response.json();
-        return resData;
+        return redirect('/events');
     }
 
 }
