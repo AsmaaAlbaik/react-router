@@ -6,11 +6,7 @@ function EventsPage() {
     const events = data.events;
     const error = data.message;
     if (error) return <p>{error}</p>
-    return (
-        <div style={{ textAlign: 'center' }}>
-            <EventsList events={events} />
-        </div>
-    );
+    return <EventsList events={events} />;
 }
 
 export default EventsPage;
